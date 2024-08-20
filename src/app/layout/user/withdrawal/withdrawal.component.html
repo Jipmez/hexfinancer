@@ -1,0 +1,102 @@
+<div class="container">
+  <div class="col-xl-12 col-lg-12 col-md-12">
+    <div class="card acc_balance">
+      <div class="card-header">
+        <h4 class="card-title">Wallet</h4>
+      </div>
+      <div class="card-body">
+
+
+        <div class="d-flex justify-content-between my-4">
+          <div>
+            <p class="mb-1">Available Balance</p>
+            <h4 class="crypt-up" *ngIf="acc < 1"><b>$0.00 USD </b></h4>
+            <h4 class="crypt-up" *ngIf="acc > 1"><b>{{acc | currency}}</b></h4>
+          </div>
+          <div>
+            <p class="mb-1">Pending</p>
+            <h4>$ {{pwith}}</h4>
+          </div>
+        </div>
+
+
+
+        <div class="container-fluid" *ngIf="display == 1">
+          <div class="crypt-withdraw-body bg-white">
+            <form (ngSubmit)='withdraw(so)' #so='ngForm'>
+              <div class="row">
+                <div class="col-md-12">
+
+
+
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control" required ngModel [(ngModel)]='val' placeholder="1,000.00"
+                      required ngModel name="withdraw">
+                    <div class="input-group-append">
+                      <span class="input-group-text">USD</span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-group">
+                      <select name="withdrawto" required="" ngModel class="form-control" id="currencyfrr">
+                        <option value="" selected disabled>--Select payment address--</option>
+                        <option value="Bitcoin" *ngIf="bitad" selected="">Bitcoin : <span *ngIf="bitad">{{bitad}}</span>
+                          <span *ngIf=" !bitad ">Update your
+                            wallet
+                            address</span></option>
+                        <option value="Ether" selected="" *ngIf="ether">Ether : <span *ngIf="ether">{{ether}}</span>
+                          <span *ngIf=" !ether ">Update your
+                            wallet
+                            address</span></option>
+                        <option value="Binance" *ngIf="usdt" selected="">BNB : <span *ngIf="usdt">{{usdt}}</span> <span
+                            *ngIf=" !usdt">Update your
+                            wallet
+                            address</span></option>
+
+                        <option value="USDT(ERC20)" *ngIf="usdterc" selected="">USDT(ERC20) : <span
+                            *ngIf="usdterc">{{usdterc}}</span>
+                          <span *ngIf=" !usdterc">Update your
+                            wallet
+                            address</span></option>
+
+                        <!--     <option value="USDT(TRCC20)" selected="">USDT(TRC20) : <span *ngIf="usdttrc">{{usdttrc}}</span>
+                          <span *ngIf=" !usdt">Update your
+                            wallet
+                            address</span></option> -->
+                        <!--  <option value="Bank" *ngIf="country == 'India'">Bank : <span *ngIf="bank">{{bank}}</span>
+                          <span *ngIf=" !bank ">Update Your
+                            Bank
+                            account</span></option> -->
+                      </select>
+                    </div>
+                  </div>
+
+                  <button [disabled]='!so.valid' class="crypt-button-red-full" *ngIf='acc >= withlimit'>Initiate
+                    Withdraw</button>
+
+                  <div class="no-fund alert alert-danger" *ngIf="acc < withlimit">
+                    <span style="color:red">x</span>
+                    You don't have enough funds to withdraw
+                  </div>
+
+
+                </div>
+              </div>
+            </form>
+
+
+          </div>
+        </div>
+
+
+
+
+        <div class="btn-group mb-3 mt-3">
+          <button class="btn btn-danger waves-effect" (click)="display  = 1" *ngIf="display == 0">Withdraw</button>
+          <button class="btn btn-success waves-effect" routerLink="../profile" *ngIf=" !bitad ">Update Wallet
+            Address</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

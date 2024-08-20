@@ -1,0 +1,95 @@
+<ng-progress
+  [color]="'#4659E2'"
+  [speed]="200"
+  [thick]="true"
+  [speed]="500"
+  [trickleSpeed]="250"
+></ng-progress>
+<div class="container-fluid ws-help">
+  <div class="container">
+    <div class="text-center">
+      <h1>Faq</h1>
+      <h3>How can we help you?</h3>
+      <img
+        src="https://britchain.io/assets/img/faq.jpeg"
+        class="help-img"
+        alt=""
+        srcset=""
+      />
+    </div>
+  </div>
+</div>
+
+<div class="container ws-faq">
+  <!--h2 class="text-center">FAQs</h2-->
+
+  <div class="q-area" (click)="faq_tog('.ans-1', '.qs-1')">
+    <span class="fa-pull-left qs-1">+</span>
+    <h3>Who can invest with Hexfinancer?</h3>
+    <p class="ans ans-1">
+      Any body with a paying job and wants to increase incomes and is over the
+      age of 18. No accreditation required.
+    </p>
+  </div>
+
+  <div class="q-area" (click)="faq_tog('.ans-2', '.qs-2')">
+    <span class="fa-pull-left qs-2">+</span>
+    <h3>Are my assets with Hexfinancer protected?</h3>
+    <p class="ans ans-2" style="display: none">
+      Hexfinancer is a division of Canadian ShareOwner Investments Inc., a
+      registered investment dealer and a member of Investment Industry
+      Regulatory Organization of Canada (IIROC) and the Canadian Investor
+      Protection Fund (CIPF). Customer accounts protected by CIPF within
+      specified limits in the event ShareOwner becomes insolvent. A brochure
+      describing the nature and limits of coverage is available upon request or
+      at CIPF's website.
+    </p>
+  </div>
+
+  <div class="q-area" (click)="faq_tog('.ans-3', '.qs-3')">
+    <span class="fa-pull-left qs-3">+</span>
+    <h3>Is Hexfinancer a long-term investment?</h3>
+    <p class="ans ans-3">
+      Absolutely. Like all private investments, investments in Hexfinancer
+      should be viewed as long-term (5+ years). This is because nearly all of
+      the most effective investing strategies require a combination of both
+      expertise and time to pay off. We select strategies based on their
+      long-term return potential for our investors, not short-term optics. If
+      you anticipate needing your investment back in the near-term, we don't
+      recommend investing with us.
+    </p>
+  </div>
+
+  <div class="q-area" (click)="faq_tog('.ans-4', '.qs-4')">
+    <span class="fa-pull-left qs-4">+</span>
+    <h3>
+      How is Hexfinancer Trade different from the big banks and other discount
+      brokerages?
+    </h3>
+    <p class="ans ans-4">
+      Some important differences are that Hexfinancer is completely mobile,
+      charges no commissions on trades, and has no minimum balance. We use
+      technology to drastically reduce our operating costs by eliminating the
+      things that make traditional brokerages expensive — like bank branches,
+      large teams, and legacy systems. Bestrade is simple, jargon-free, and
+      human — everything Canadians have come to expect from Bestrade. Opening an
+      account takes minutes, and mere seconds for existing Hexfinancer clients.
+      Hexfinancer is a division of Canadian ShareOwner Investments Inc. and is
+      similar to other brokerages in that it is a registered investment dealer
+      and a member of the Investment Industry Regulatory Organization of Canada
+      (IIROC).
+    </p>
+  </div>
+
+  <div class="q-area" (click)="faq_tog('.ans-5', '.qs-5')">
+    <span class="fa-pull-left qs-5">+</span>
+    <h3>I have questions about Bestrade, where can I go for answers?</h3>
+    <p class="ans ans-5">
+      Our Trade Help Centre has answers to our most common questions - like how
+      to sign up, fund your account, and start trading. You can also visit our
+      Hexfinancer Status page for live updates about how the platform is
+      working. If you can't find your answers there, or have specific questions
+      about your account, contact support@Hexfinancer.com.
+    </p>
+  </div>
+</div>

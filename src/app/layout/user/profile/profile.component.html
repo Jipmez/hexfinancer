@@ -1,0 +1,204 @@
+ <div class="container">
+   <div class="col-xl-12 col-md-12">
+     <div class="card">
+       <div class="card-header">
+         <h4 class="card-title">Profile</h4>
+       </div>
+       <div class="card-body">
+         <div class="row align-items-center">
+           <div class="col-xl-4">
+             <div class="id_card">
+               <img src="https://demo.quixlab.com/tradient-html/images/id.png" alt="" class="img-fluid">
+             </div>
+           </div>
+           <div class="col-xl-6">
+             <div class="id_info">
+               <h3>{{username}} </h3>
+               <p class="mb-1 mt-3">REF ID: <input type="text" id="refUrl"
+                   class="form-control form-control-lg blue-light-background"
+                   value="{{location}}/signup?ref={{profileId}}" readonly /></p>
+               <p class="mb-1">Status: <span class="font-weight-bold">Verified</span></p>
+               <a href="javascript:void(0)" (click)="copy()" class="btn btn-success mt-3 waves-effect">Copy ID</a>
+             </div>
+           </div>
+         </div>
+
+         <div class="row">
+           <div class="col-xl-12">
+             <div class="phone_verify">
+               <h4 class="card-title mb-3">Email Address</h4>
+
+             </div>
+           </div>
+           <div class="col-xl-12">
+             <div class="phone_verified">
+               <h5> <span><i class="fa fa-envelope"></i></span> {{email}}</h5>
+               <div class="verify">
+                 <div class="verified">
+                   <span><i class="la la-check"></i></span>
+                   <a href="#">Verified</a>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+         <div class="row">
+
+
+           <div class="col-xl-12">
+             <div class="phone_verify">
+               <h4 class="card-title mb-3">Update Account</h4>
+
+             </div>
+           </div>
+
+           <div class="col-xl-12">
+             <form (ngSubmit)='update(so)' #so='ngForm' class="gy-3">
+               <div class="row clearfix">
+                 <div class="col-lg-6 col-md-12" *ngIf="!en">
+                   <div class="form-group">
+                     <div class="form-control-wrap"><input [value]="bitad" ngModel name="bitad" class="form-control"
+                         placeholder="update bitcoin address" type="text" autocomplete="new-password"></div>
+                   </div>
+                 </div>
+
+
+                 <div class="col-lg-6 col-md-12" *ngIf="!en">
+                   <div class="form-group">
+                     <div class="form-control-wrap"><input [value]="ether" ngModel name="eth" class="form-control"
+                         placeholder="update ether address" type="text" autocomplete="new-password"></div>
+                   </div>
+                 </div>
+
+                 <div class="col-lg-6 col-md-12" *ngIf="!en">
+                   <div class="form-group">
+                     <div class="form-control-wrap"><input [value]="usdt" ngModel name="usdt" class="form-control"
+                         placeholder="update BNB address" type="text" autocomplete="new-password"></div>
+                   </div>
+                 </div>
+
+                 <div class="col-lg-6 col-md-12" *ngIf="!en">
+                   <div class="form-group">
+                     <div class="form-control-wrap"><input [value]="usdterc" ngModel name="usdterc" class="form-control"
+                         placeholder="update USDT(ERC20) address" type="text" autocomplete="new-password"></div>
+                   </div>
+                 </div>
+
+                 <!--     <div class="col-lg-6 col-md-12" *ngIf="!en">
+                   <div class="form-group">
+                     <div class="form-control-wrap"><input [value]="usdttrc" ngModel name="usdttrc" class="form-control"
+                         placeholder="update USDT(TRC20) address" type="text" autocomplete="new-password"></div>
+                   </div>
+                 </div> -->
+
+                 <div class="col-lg-6 col-md-12" *ngIf="!en">
+                   <div class="form-group">
+                     <div class="form-control-wrap"><input class="form-control " [value]="fullname" ngModel
+                         name="fullname" placeholder="update Your name" type="text" autocomplete="new-password">
+                     </div>
+                   </div>
+                 </div>
+                 <div class="col-lg-6 col-md-12" *ngIf="!en">
+                   <div class="form-group">
+                     <div class="form-control-wrap"><input class="form-control form-control-lg" [value]="phone" ngModel
+                         name="phone" placeholder="update Your phone" type="text" autocomplete="new-password"></div>
+                   </div>
+                 </div>
+                 <div class="col-lg-6 col-md-12" *ngIf="!en">
+                   <div class="form-group">
+                     <div class="form-control-wrap"><input class="form-control form-control-lg" name="bankname" ngModel
+                         placeholder="Bank name" type="search" [value]="bank" autocomplete="new-password">
+                     </div>
+                   </div>
+                 </div>
+                 <div class="col-lg-6 col-md-12" *ngIf="!en">
+                   <div class="form-group">
+                     <div class="form-control-wrap"><input class="form-control form-control-lg" name="bankacc" ngModel
+                         placeholder="Acc Name" type="search" [value]="bank" autocomplete="new-password">
+                     </div>
+                   </div>
+                 </div>
+                 <div class="col-lg-6 col-md-12" *ngIf="!en">
+                   <div class="form-group">
+                     <div class="form-control-wrap"><input class="form-control form-control-lg" name="banknum" ngModel
+                         placeholder=" Acc Num" type="search" [value]="bank" autocomplete="new-password">
+                     </div>
+                   </div>
+                 </div>
+                 <div class="col-lg-6 col-md-12" *ngIf="!en">
+                   <div class="form-group">
+                     <div class="form-control-wrap"><input class="form-control form-control-lg" name="bankifsc" ngModel
+                         placeholder="IFSC code" type="search" [value]="bank" autocomplete="new-password">
+                     </div>
+                   </div>
+                 </div>
+
+
+                 <div class="col-lg-12 col-md-12" *ngIf="en == 1">
+                   <div class="form-group">
+                     <div class="form-control-wrap"><input class="form-control form-control-lg" name="newpass" ngModel
+                         placeholder="Change your Password" autocomplete="new-password" type="password"></div>
+                   </div>
+                 </div>
+
+
+
+                 <div class="col-lg-12 col-md-12" *ngIf="en == 'kyc'">
+                   <div class="form-group">
+                     <label for="supported_image"> Accepted File Type: png, jpg, jpeg</label>
+                     <div class="form-control-wrap"><input class="form-control form-control-lg" name="document" ngModel
+                         placeholder="upload" type="file"></div>
+                   </div>
+                   <div class="form-group">
+                     <label for="kyc" class="label">Upload Document</label>
+                     <div class="form-control-wrap"><select class="form-control " name="kyc_type" id="">
+                         <option value="">Choose type</option>
+                         <option value="Passport">Passport</option>
+                         <option value="Driver's License">Driver's License</option>
+                         <option value="ID Card">ID Card</option>
+                         <option value="Utility Bill">Utility Bill</option>
+                       </select>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+               <div class="row g-3">
+                 <div class="col-lg-7 offset-lg-5">
+                   <div class="form-group mt-2"><button type="button" data-dismiss="modal" data-toggle="modal"
+                       data-target="#pass-edit" class="btn btn-lg btn-primary">Update</button></div>
+                 </div>
+               </div>
+
+               <div class="modal fade" tabindex="-1" id="pass-edit" style="padding-right: 0px !important;">
+                 <div class="modal-dialog modal-dialog-centered modal-md">
+                   <div class="modal-content">
+                     <div class="modal-body modal-body-md text-center">
+                       <div class="nk-modal">
+                         <h4 class="nk-modal-title">Confirm Your Update</h4>
+                         <div class="nk-modal-text">
+                           <p>To confirm this transaction.Please enter your Current Password in order
+                             complete the update of your profile or cancel.</p>
+                         </div>
+                         <div class="nk-modal-form">
+                           <div class="form-group">
+                             <input class="form-control form-control-password-big text-center" name="cpass" ngModel
+                               type="password">
+                           </div>
+                         </div>
+                         <div class="nk-modal-action"><button [disabled]='!so.valid'
+                             class="btn btn-lg btn-mw btn-primary">Submit</button>
+                           <br>
+                           <a href="#" class="link link-soft" data-dismiss="modal" id="close">Cancel and
+                             return</a>
+                         </div>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </form>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>

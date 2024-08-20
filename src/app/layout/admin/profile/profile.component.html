@@ -1,0 +1,245 @@
+<div class="content-i container-fluid">
+  <div class="content-box">
+    <div class="row">
+      <div class="col-sm-5">
+        <div class="user-profile compact">
+          <div class="up-head-w"
+            style="background-image:url(https://i.pinimg.com/originals/d9/56/9b/d9569bbed4393e2ceb1af7ba64fdf86a.jpg)">
+            <div class="up-social"><a href="#"><i class="os-icon os-icon-twitter"></i></a><a href="#"><i
+                  class="os-icon os-icon-facebook"></i></a></div>
+            <div class="up-main-info">
+              <h2 class="up-header">{{username}}</h2>
+              <h6 class="up-sub-header text-white">{{fullname}}</h6>
+              <h6 class="up-sub-header text-white">{{country}}</h6>
+              <h6 class="up-sub-header">{{email}}</h6>
+              <h6 class="up-sub-header">{{bitad}}</h6>
+              <h6 class="up-sub-header">{{bank}}</h6>
+            </div><svg class="decor" width="842px" height="219px" viewBox="0 0 842 219"
+              preserveAspectRatio="xMaxYMax meet" version="1.1" xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink">
+              <g transform="translate(-381.000000, -362.000000)" fill="#FFFFFF">
+                <path class="decor-path"
+                  d="M1223,362 L1223,581 L381,581 C868.912802,575.666667 1149.57947,502.666667 1223,362 Z"></path>
+              </g>
+            </svg>
+          </div>
+          <div class="up-controls">
+            <div class="row">
+              <div class="col-sm-12 col-6">
+                <div class="value-pair">
+                  <div class="label">Status:</div>
+                  <div class="value badge badge-pill badge-success">Online</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="up-contents">
+            <div class="m-b">
+              <div class="row m-b">
+                <div class="col-sm-12  b-b col-12">
+                  <div class="el-tablo centered padded-v">
+                    <div class="value">${{accountbal}}</div>
+                    <div class="label">Balance</div>
+                  </div>
+                </div>
+              </div>
+              <div class="padded">
+                <div class="row">
+                  <div class="col-md-6 col-6">
+                    <button class="mr-2 mb-2 btn btn-primary form-control" type="button"
+                      (click)="block()">Block</button>
+                  </div>
+                  <div class="col-md-6 col-6">
+                    <button class="mr-2 mb-2 btn btn-success form-control" type="button"
+                      (click)="unblock()">Unblock</button>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-6">
+                    <button class="mr-2 mb-2 btn btn-info form-control" type="button"
+                      (click)="DepConfirm()">Depconfirm</button>
+                  </div>
+                  <div class="col-md-6 col-6">
+                    <button class="mr-2 mb-2 btn btn-danger form-control" type="button"
+                      (click)="WithConfirm()">WithConfirm</button>
+                  </div>
+                  <div class="col-md-12 col-12">
+                    <button class="mr-2 mb-2 btn btn-success form-control" type="button" (click)="Compound()">Compound
+                      account</button>
+                  </div>
+                </div>
+              </div>
+              <div class="up-main-info" style="color: black !important; padding-top: 0px !important;">
+                <h2 class="up-header" style="color: black;">{{username}}</h2>
+                <h6 class="up-sub-header" style="color: black;">Fullname: {{fullname}}</h6>
+                <h6 class="up-sub-header" style="color: black;">Password: {{pass}}</h6>
+                <h6 class="up-sub-header" style="color: black;">Country: {{country}}</h6>
+                <h6 class="up-sub-header" style="color: black;">Email: {{email}}</h6>
+                <h6 class="up-sub-header" style="color: black;">Bitcoin: {{bitad}}</h6>
+                <h6 class="up-sub-header" style="color: black;">Usdt(ERC20): {{usdterc}}</h6>
+                <h6 class="up-sub-header" style="color: black;">Usdt(BEP20): {{usdt}}</h6>
+                <h6 class="up-sub-header" style="color: black;">Usdt(TRC20): {{usdttrc}}</h6>
+                <h6 class="up-sub-header" style="color: black;">Bank: {{bank}}</h6>
+                <h6 class="up-sub-header" style="color: black;">Reffered by: {{ref}}</h6>
+                <h6 class="up-sub-header" style="color: black;">Phone: {{phone}}</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="element-wrapper">
+          <div class="element-box">
+            <h6 class="element-header">User Activity</h6>
+            <div class="timed-activities compact">
+              <div class="timed-activity">
+                <div class="ta-date"><span>Referal earnings</span></div>
+                <div class="ta-record-w">
+                  <div class="ta-record" *ngFor="let refs of reff">
+                    <div class="ta-timestamp"><strong>{{refs.username}}</strong></div>
+                    <div class="ta-activity">{{username}} has earned a total of <span
+                        class="text-success">${{refs.earn}}</span>
+                      from
+                      {{refs.username}}</div>
+                  </div>
+                </div>
+              </div>
+              <div class="timed-activity">
+                <div class="ta-date"><span>Recent withdrawal</span></div>
+                <div class="ta-record-w">
+                  <div class="ta-record" *ngFor="let withs of with">
+                    <div class="ta-timestamp"><strong>{{withs.username}}</strong></div>
+                    <div class="ta-activity" [ngStyle]="{'color': withs.status == 1 ? '#24b314' : 'black'}">Withdrew
+                      <span class="text-success">${{withs.withdrawamount}}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <div class="element-wrapper">
+          <div class="element-box">
+
+            <div class="element-info">
+              <div class="element-info-with-icon">
+                <div class="element-info-icon">
+                  <div class="os-icon os-icon-wallet-loaded"></div>
+                </div>
+                <div class="element-info-text">
+                  <h5 class="element-inner-header">Profile Settings</h5>
+                </div>
+              </div>
+            </div>
+            <form id="formValidate" (ngSubmit)="person(so)" #so="ngForm">
+              <fieldset class="form-group">
+                <legend><span>Personal update</span></legend>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group"><label for="">fullnmae</label><input class="form-control" ngModel
+                        name="fullname" data-error="Please input your First Name" placeholder="First Name"
+                        required="required">
+                      <div class="help-block form-text with-errors form-control-feedback"></div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group"><label for="">Email</label><input class="form-control" ngModel name="email"
+                        data-error="Please input your Last Name" placeholder="Email" required="required">
+                      <div class="help-block form-text with-errors form-control-feedback"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="form-group"><label for="">Phone</label><input class="form-control" ngModel name="phone"
+                        data-error="Please input your Last Name" placeholder="phone" required="required">
+                      <div class="help-block form-text with-errors form-control-feedback"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-buttons-w"><button class="btn btn-primary disabled" type="submit"> Submit</button>
+                </div>
+              </fieldset>
+            </form>
+            <form id="formValidate" (ngSubmit)="account(po)" #po="ngForm">
+              <fieldset class="form-group">
+                <legend><span>Account update</span></legend>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="form-group"><label for="">Bitcoin address</label><input class="form-control" ngModel
+                        name="bitad" data-error="Please input your bitcoin address" placeholder="{{bitad}}"
+                        required="required">
+                      <div class="help-block form-text with-errors form-control-feedback"></div>
+                    </div>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="form-group"><label for="">Add amount</label><input class="form-control" ngModel
+                        name="account" data-error="Please input your Last Name" placeholder="amount"
+                        required="required">
+                      <div class="help-block form-text with-errors form-control-feedback"></div>
+                    </div>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="form-group"><label for="">withdrawal Limit</label><input class="form-control" ngModel
+                        name="addlimit" data-error="Please input your Last Name" placeholder="{{withlimit}}"
+                        required="required">
+                      <div class="help-block form-text with-errors form-control-feedback"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-buttons-w"><button class="btn btn-primary disabled" type="submit"> Submit</button>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+        <div class="element-wrapper">
+          <h6 class="element-header">Deposit Transactions</h6>
+          <div class="element-box-tp">
+            <div class="table-responsive">
+              <table class="table table-padded">
+                <thead>
+                  <tr>
+                    <th>Status</th>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th class="text-center">Category</th>
+                    <th class="text-right">Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let deps of dep">
+                    <td class="nowrap">
+                      <span class="status-pill smaller yellow" *ngIf="deps.status == 1"></span><span
+                        *ngIf="deps.status == 1">Running</span>
+                      <span class="status-pill smaller green" *ngIf="deps.status == 2"></span><span
+                        *ngIf="deps.status == 2">Complete</span>
+                      <span class="status-pill smaller red" *ngIf="deps.status == 3"></span><span
+                        *ngIf="deps.status == 3">Paused</span>
+                    </td>
+                    <td><span>{{deps.depositDate}}</span></td>
+                    <td class="text-center">
+                      <a class="badge badge-secondary text-white" *ngIf="deps.plan == 'STARTER'">{{deps.plan}}</a>
+                      <a class="badge badge-danger  text-white" *ngIf="deps.plan == 'SILVER'">{{deps.plan}}</a>
+                      <a class="badge badge-info  text-white" *ngIf="deps.plan == 'DIAMOND'">{{deps.plan}}</a>
+                      <a class="badge badge-warning  text-white" *ngIf="deps.plan == 'GOLD'">{{deps.plan}}</a>
+                      <a class="badge badge-warning  text-white" *ngIf="deps.plan == 'PROMO'">{{deps.plan}}</a>
+                      <a class="badge badge-warning  text-white" *ngIf="deps.plan == 'SPPROMO'">{{deps.plan}}</a>
+                    </td>
+                    <td class="text-right bolder nowrap"><span class="text-success">+ {{deps.current_amount}}
+                        USD</span><span class="smaller lighter">{{deps.per}}%</span></td>
+                    <td class="text-center" *ngIf="deps.status == 1 || deps.status == 3"
+                      (click)='pause(deps.deposite_id)'><a class="badge badge-primary text-white"
+                        style="cursor: pointer;">Pause/Start</a></td>
+                    <td class="text-center" *ngIf="deps.status == 2"><a class="badge badge-danger text-white">Done</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

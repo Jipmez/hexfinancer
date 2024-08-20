@@ -1,0 +1,401 @@
+<!-- Start Nav Section-->
+<div id="na" class="">
+  <div class="page-wrapper">
+    <header class="main-header">
+      <div class="header-top">
+        <div class="auto-container">
+          <div class="inner-container clearfix">
+            <div class="top-left">
+              <ul class="info-list d-inline">
+                <li>
+                  <a routerLink="mailto:admin@hexfinancer.com"
+                    ><span class="icon fa fa-envelope"></span>
+                    admin@hexfinancer.com</a
+                  >
+                </li>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-upper">
+        <div class="auto-container">
+          <div class="inner-container clearfix">
+            <div class="pull-left logo-box">
+              <div
+                class="logo"
+                style="font-size: 32px; font-weight: bold; padding-top: 5px"
+              >
+                <a routerLink="/"
+                  ><img
+                    src="../../../../assets/hexcut.png"
+                    title=""
+                    style="width: 56px; height: 51px"
+                  />HexFinancer</a
+                >
+              </div>
+            </div>
+
+            <div class="nav-outer pull-left clearfix">
+              <nav class="main-menu navbar-expand-md">
+                <div class="navbar-header">
+                  <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                  >
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div>
+
+                <div
+                  class="navbar-collapse show collapse clearfix"
+                  id="navbarSupportedContent"
+                >
+                  <ul class="navigation clearfix">
+                    <li class="current"><a routerLink="/">Home</a></li>
+                    <li><a routerLink="about">About</a></li>
+                    <li><a routerLink="faq">Faq's</a></li>
+                    <li><a routerLink="contact">Contact Us</a></li>
+                    <li><a routerLink="signup">Registration</a></li>
+                    <li><a routerLink="login">Login</a></li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+
+            <div class="outer-box">
+              <div
+                class="mobile-nav-toggler"
+                style="padding: 11px 0 !important; color: #2c724f"
+                (click)="toggle()"
+              >
+                <span class="icon fa fa-bars"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mobile-menu">
+        <div class="menu-backdrop"></div>
+        <div class="close-btn" (click)="toggled()" style="color: #2c724f">
+          <span class="fa fa-times"></span>
+        </div>
+
+        <nav class="menu-box mCustomScrollbar _mCS_1 mCS_no_scrollbar">
+          <div
+            id="mCSB_1"
+            class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside"
+            style="max-height: 560px"
+            tabindex="0"
+          >
+            <div
+              id="mCSB_1_container"
+              class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y"
+              style="position: relative; top: 0; left: 0"
+              dir="ltr"
+            >
+              <div
+                class="nav-logo"
+                style="font-size: 25px; font-weight: bold; padding-top: 5px"
+              >
+                <a
+                  ><img
+                    src="../../../../assets/hexcut.png"
+                    title=""
+                    style="width: 50px; height: 50px"
+                  />HexFinancer</a
+                >
+              </div>
+              <div class="menu-outer">
+                <div class="navbar-header">
+                  <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                  >
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div>
+
+                <div
+                  class="navbar-collapse show collapse clearfix"
+                  id="navbarSupportedContent"
+                >
+                  <ul class="navigation clearfix">
+                    <li class="current"><a routerLink="/">Home</a></li>
+                    <li><a routerLink="about">About</a></li>
+                    <li><a routerLink="faq">Faq's</a></li>
+                    <li><a routerLink="contact">Contact Us</a></li>
+                    <li><a routerLink="signup">Registration</a></li>
+                    <li><a routerLink="login">Login</a></li>
+                    <br />
+                    <div class="text-center">
+                      <button
+                        class="btn btn-success"
+                        data-toggle="modal"
+                        data-target="#exampleModal"
+                      >
+                        view cert.
+                      </button>
+                    </div>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div
+              id="mCSB_1_scrollbar_vertical"
+              class="mCSB_scrollTools mCSB_1_scrollbar mCS-light mCSB_scrollTools_vertical"
+              style="display: none"
+            >
+              <div class="mCSB_draggerContainer">
+                <div
+                  id="mCSB_1_dragger_vertical"
+                  class="mCSB_dragger"
+                  style="
+                    position: absolute;
+                    min-height: 30px;
+                    height: 0px;
+                    top: 0px;
+                  "
+                  oncontextmenu="return false;"
+                >
+                  <div class="mCSB_dragger_bar" style="line-height: 30px"></div>
+                  <div class="mCSB_draggerRail"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <router-outlet></router-outlet>
+
+    <footer class="main-footer">
+      <div class="auto-container">
+        <div class="widgets-section">
+          <div class="row clearfix">
+            <div class="big-column col-lg-6 col-md-12 col-sm-6 col-12">
+              <div class="row clearfix">
+                <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+                  <div class="footer-widget logo-widget">
+                    <div
+                      class="logo"
+                      style="
+                        font-size: 32px;
+                        font-weight: bold;
+                        padding-top: 5px;
+                      "
+                    >
+                      <a routerLink="/"
+                        ><img
+                          src="../../../../assets/hexcut.png"
+                          title=""
+                          style="width: 56px; height: 51px"
+                        />HexFinance</a
+                      >
+                    </div>
+                    <div class="call">
+                      Contact us directly
+                      <a class="phone" routerLink="tel:"></a>
+                      <a class="email" routerLink="mailto:admin@hexfinancer.com"
+                        >admin@hexfinancer.com</a
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="certificate">
+                  <div>
+                    <!-- <a
+                      class="box-modal"
+                      style="cursor: pointer"
+                      data-width="550"
+                      rel="cert"
+                      data-toggle="modal"
+                      data-target="#exampleModal"
+                    >
+                      <img src="../../../../assets/images/las.jpg" />
+                    </a> -->
+
+                    <p
+                      style="
+                        color: #999;
+                        font-size: 13px;
+                        font-weight: 600;
+                        font-family: 'Open Sans', sans-serif;
+                        margin-left: 13px;
+                      "
+                    >
+                      Hexfinancer passed the incorporation process and is listed
+                      by Companies House.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+                  <div class="footer-widget links-widget">
+                    <h5>Company</h5>
+                    <ul class="list-link">
+                      <li><a routerLink="about">About Us</a></li>
+                      <li><a routerLink="faq">FAQ</a></li>
+                      <li><a routerLink="Contact">Contact Us</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="big-column col-lg-6 col-md-12 col-sm-6 col-12">
+              <div class="row clearfix">
+                <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+                  <div class="footer-widget links-widget">
+                    <h5>Quick Links</h5>
+                    <ul class="list-link">
+                      <li><a routerLink="signup">Registration</a></li>
+                      <li><a routerLink="login">Login</a></li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+                  <div class="footer-widget newsletter-widget">
+                    <h5>Our Location</h5>
+                    <div class="text">
+                      <p>
+                        401 EAST LAS OLAS Blvd. Ste. 800, Fort Lauderdale,
+                        Florida 33301, US.
+                      </p>
+                    </div>
+
+                    <div class="newsletter-form">
+                      <form method="post" action="#">
+                        <div class="form-group">
+                          <input
+                            type="email"
+                            name="email"
+                            value=""
+                            placeholder="Email Address..."
+                          />
+                          <button
+                            type="submit"
+                            class="theme-btn icofont-arrow-right"
+                          ></button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="auto-container">
+            <div class="bottom-inner">
+              <div class="row clearfix">
+                <div class="col-lg-8 col-md-12 col-sm-12">
+                  <div class="copyright">
+                    Copyright ©2023 All rights reserved | hexfinancer
+                  </div>
+                </div>
+
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                  <ul class="social-nav">
+                    <li>
+                      <a
+                        routerLink="https://twitter.com/"
+                        class="icofont-twitter"
+                      ></a>
+                    </li>
+                    <li>
+                      <a
+                        routerLink="http://facebook.com/"
+                        class="icofont-facebook"
+                      ></a>
+                    </li>
+                    <li>
+                      <a
+                        routerLink="https://www.instagram.com/"
+                        class="icofont-instagram"
+                      ></a>
+                    </li>
+                    <li>
+                      <a routerLink="https://rss.com/" class="icofont-rss"></a>
+                    </li>
+                    <li>
+                      <a
+                        routerLink="https://www.youtube.com/"
+                        class="icofont-play-alt-1"
+                      ></a>
+                    </li>
+                    <li>
+                      <div id="ytWidget"></div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal_block animated ui-widget-content ui-draggable">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              <span style="color: white">Certificate of incorporation</span>
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true" style="color: white; font-size: 50px"
+                >&times;</span
+              >
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="inset ajax_modal">
+              <img
+                src="../../../../assets/images/las.jpg"
+                class="img-fluid img-responsive"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Nav Section-->
+  </div>
+</div>

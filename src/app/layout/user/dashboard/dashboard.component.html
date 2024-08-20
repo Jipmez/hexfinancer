@@ -1,0 +1,162 @@
+<div class="wrapper">
+  <nav id="sidebar" class="sidebar">
+    <a
+      class="sidebar-brand"
+      data-cdl="c"
+      data-qint="0"
+      href="/Dashboard"
+      style="font-size: 25px; font-weight: bold"
+    >
+      <img
+        src="../../../../assets/hexcut.png"
+        style="
+          width: 15%;
+
+          -webkit-filter: drop-shadow(2px 1px 0 rgba(202, 199, 199, 0.48))
+            drop-shadow(-1px -1px 0 rgba(168, 165, 165, 0.55));
+          filter: drop-shadow(2px 1px 0 rgba(202, 199, 199, 0.48))
+            drop-shadow(-1px -1px 0 rgba(168, 165, 165, 0.55));
+          box-shadow: none;
+        "
+        alt="logo"
+      />
+      HexFinance
+    </a>
+    <div class="sidebar-content">
+      <div class="sidebar-user">
+        <img
+          src="../../../../assets/images/userimg.jpg"
+          class="img-fluid rounded-circle mb-2"
+        />
+        <div class="fw-bold">{{ user }}</div>
+        <small>User</small>
+      </div>
+      <ul class="sidebar-nav">
+        <li class="sidebar-header">Main</li>
+        <li class="nav-item">
+          <a class="sidebar-link" data-qint="0" routerLink="/dashboard">
+            <i class="align-middle me-2 fa fa-fw fa-home"></i>
+            <span class="align-middle">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="sidebar-link"
+            [routerLink]="['profile']"
+            [queryParams]="{ change: 'kyc' }"
+          >
+            <i class="align-middle me-2 fa fa-fw fa-link"></i>
+            <span class="align-middle">KYC</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="sidebar-link" routerLink="profile">
+            <i class="align-middle me-2 fa fa-fw fa-user"></i>
+            <span class="align-middle">Profile</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="sidebar-link" data-qint="0" routerLink="deposit">
+            <i class="align-middle me-2 fa fa-fw fa-arrows-alt"></i>
+            <span class="align-middle">Make Deposit</span>
+          </a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="sidebar-link" data-qint="0" href="/Dep_History">
+            <i class="align-middle me-2 fa fa-fw fa-list"></i>
+            <span class="align-middle">Deposit History</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="sidebar-link" data-qint="0" href="/Transactions">
+            <i class="align-middle me-2 fa fa-fw fa-bar-chart"></i>
+            <span class="align-middle">Transaction History</span>
+          </a>
+        </li> -->
+        <li class="nav-item">
+          <a class="sidebar-link" data-qint="0" routerLink="withdrawal">
+            <i class="align-middle me-2 fa fa-fw fa-send"></i>
+            <span class="align-middle">Withdrawal</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="sidebar-link" data-qint="0" routerLink="loan">
+            <i class="align-middle me-2 fa fa-fw fa-ticket"></i>
+            <span class="align-middle">Loan</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="sidebar-link" data-qint="0" routerLink="affiliate">
+            <i class="align-middle me-2 fa fa-fw fa-link"></i>
+            <span class="align-middle">Referral</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="sidebar-link" (click)="logOut()">
+            <i class="align-middle me-2 fa fa-fw fa-power-off"></i>
+            <span class="align-middle">Log Out</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="main">
+    <nav class="navbar navbar-expand navbar-theme">
+      <button
+        class="sidebar-toggle d-flex me-2"
+        style="background: transparent; border: none"
+        id="tog"
+        (click)="toggleme()"
+      >
+        <i class="hamburger align-self-center"></i>
+      </button>
+      <div class="navbar-collapse collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item dropdown ms-lg-2">
+            <a
+              class="nav-link dropdown-toggle position-relative"
+              href="javascript:void(0)"
+              id="userDropdown"
+              data-bs-toggle="dropdown"
+            >
+              <i class="align-middle fa fa-cog"></i>
+            </a>
+            <div
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="userDropdown"
+            >
+              <a class="dropdown-item" routeLink="profile"
+                ><i class="align-middle me-1 fa fa-fw fa-user"></i> View
+                Profile</a
+              >
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" (click)="logOut()"
+                ><i class="align-middle me-1 fa fa-fw fa-power-off"></i> Log
+                out</a
+              >
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="content">
+      <div class="cHy">
+        <span class="connify fa fa-sun-o" style="color: #f7f73b"></span
+        >&nbsp;&nbsp;&nbsp;<span class="cfg_y44"
+          >Good Day, {{ user }}. It's Good To Have You Today.</span
+        ><a
+          class="whf_gt6"
+          onclick="$(this).parent().css({'top':'-300px','opacity':'0'})"
+          >X</a
+        >
+      </div>
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>
+
+<audio class="win" controls preload="none" style="display: none">
+  <source src="../../../../assets/audio/welcome.mp3" type="audio/wav" />
+</audio>

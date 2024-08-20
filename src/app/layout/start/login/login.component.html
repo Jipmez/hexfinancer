@@ -1,0 +1,161 @@
+<ng-progress
+  [color]="'#e73c3e'"
+  [speed]="200"
+  [thick]="true"
+  [speed]="500"
+  [trickleSpeed]="250"
+></ng-progress>
+
+<!-- <div class="container login">
+  <div class="row">
+    <div class="col-md-10 col-lg-8 col-xl-6 bg-form ">
+      <div class="card-header">Login</div>
+      <div class="loging-in">
+        <h2 class="text-center pt-4 mb-5">Login to Bestrade</h2>
+        <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="code == 1">
+          Mail confirmed
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="code == 2">
+          Mail confirmation failed
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form (ngSubmit)='logIn(so)' #so='ngForm' id="login" novalidate="novalidate">
+
+          <div class="form-group">
+            <input type="email" class="form-control" placeholder="Email" email required ngModel name="email">
+          </div>
+
+          <div class="form-group">
+            <input type="password" class="form-control" placeholder="Password" id="me" required ngModel name="password"
+              autocomplete="current-password">
+          </div>
+
+          <button type="submit" class="btn d-table m-auto pl-5 pr-5 btn_st text-uppercase" type="submit"
+            [disabled]='!so.valid'> Login</button>
+
+          <div class="access text-center">
+            <a class="t-btn txt-forgot" routerLink="/forgot_pass">
+              Forgot Your Password?
+            </a>
+            <span>|</span>
+            <a routerLink="/signup">Create-Account</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="contact-form-area mb-120 container mt-20">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div
+          class="contact-form bg_cover pt-70 pb-70"
+          style="background: #f9f9f9"
+        >
+          <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8">
+              <div class="contact-form-title text-center">
+                <h3 class="title">Login Here</h3>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="alert alert-success alert-dismissible fade show"
+            role="alert"
+            *ngIf="code == 1"
+          >
+            Mail confirmed
+            <button
+              type="button"
+              class="close"
+              data-dismiss="alert"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div
+            class="alert alert-danger alert-dismissible fade show"
+            role="alert"
+            *ngIf="code == 2"
+          >
+            Mail confirmation failed
+            <button
+              type="button"
+              class="close"
+              data-dismiss="alert"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form
+            (ngSubmit)="logIn(so)"
+            #so="ngForm"
+            id="login"
+            novalidate="novalidate"
+          >
+            <div id="ContentPlaceHolder1_UpdatePanel1">
+              <div id="ContentPlaceHolder1_Lblmsg"></div>
+              <div class="row justify-content-center">
+                <div class="col-lg-10 col-md-11">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="input-box mt-30">
+                        <input
+                          type="email"
+                          class="form-control"
+                          placeholder="Email"
+                          email
+                          required
+                          ngModel
+                          name="email"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="input-box mt-30">
+                        <input
+                          type="password"
+                          class="form-control"
+                          placeholder="Password"
+                          id="me"
+                          required
+                          ngModel
+                          name="password"
+                          autocomplete="current-password"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-lg-12">
+                      <div class="input-box mt-30 text-center">
+                        <a routerLink="/forgot_pass">Forgot Password</a><br />
+                        <button
+                          [disabled]="!so.valid"
+                          type="submit"
+                          class="main-btn"
+                        >
+                          Login
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<ng-progress [color]="'#4659E2'" [speed]="200" [thick]="true" [speed]="500" [trickleSpeed]="250"></ng-progress>
+
+
+
+
+
+
+
+<div class="show">
+
+  <div class="authincation section-padding">
+    <div class="container h-100">
+      <div class="row justify-content-center h-100 align-items-center">
+        <div class="col-xl-5 col-md-6">
+          <div class="mini-logo text-center my-5">
+            <a routerLink="/"><img src="../../../../assets/images/logo.png" alt=""></a>
+          </div>
+          <div class="auth-form card">
+            <div class="card-header justify-content-center">
+              <h4 class="card-title">Forgot password</h4>
+
+            </div>
+            <div class="card-body " style="border: 2px solid #e73c3e;">
+
+              <form (ngSubmit)="forgotPass(ad)" #ad="ngForm" class="signin_validate">
+                <div class="form-group">
+                  <label>Email</label>
+                  <input class="form-control" type="email" email required ngModel name="email" placeholder="email">
+                </div>
+
+                <div class="text-center">
+                  <button type="submit" [disabled]='!ad.valid' class="btn btn-success btn-block">Submit</button>
+                </div>
+              </form>
+              <div class="new-account mt-3">
+                <p>Don't have an account? <a class="text-primary" routerLink="/signup">Sign
+                    up</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

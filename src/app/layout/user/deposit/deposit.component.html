@@ -1,0 +1,484 @@
+<div *ngIf="pucg == 0">
+  <div class="container my-5">
+    <!-- <div class="text-center mb-5">
+      <span class="text-secondary text-uppercase">Products</span>
+      <h1 class="text-capitalize font-weight-bold">Product <span style="color: #2c724f;">Pricing</span></h1>
+    </div> -->
+    <div
+      class="my-5 py-4 px-5 bg-light d-sm-flex align-items-center justify-content-between"
+    >
+      <div class="text-center mb-2">
+        <span style="font-weight: 600">Crypto</span>
+        <h4 class="my-2 font-weight-bold">$100.00 - $999.00</h4>
+        <small class="text-uppercase text-secondary">24 hrs</small>
+      </div>
+      <div class="text-center text-uppercase text-secondary mb-2">
+        <small class="d-block my-3" style="font-weight: 600"
+          >10% after 24hrs</small
+        >
+        <!--  <small class="d-block my-3" style="font-weight: 600;">10GB Bandwidth</small> -->
+        <small class="d-block" style="font-weight: 600">24/7 Support</small>
+      </div>
+
+      <div class="text-center">
+        <a
+          (click)="options = 'crypto1'; pucg = 1"
+          class="btn text-white px-5 py-3"
+          style="background-color: #2c724f; border-radius: 30px"
+          >Get Started</a
+        >
+      </div>
+    </div>
+
+    <div
+      class="my-5 py-4 px-5 bg-light d-sm-flex align-items-center justify-content-between"
+    >
+      <div class="text-center">
+        <span style="font-weight: 600">Crypto Vip I</span>
+        <h4 class="my-2 font-weight-bold">$1,000.00 - 9,999.00</h4>
+        <small class="text-uppercase text-secondary">48 hrs</small>
+      </div>
+      <div class="text-center text-uppercase text-secondary mb-2">
+        <small class="d-block my-3" style="font-weight: 600"
+          >15% after 48 hrs</small
+        >
+        <!-- <small class="d-block my-3" style="font-weight: 600;">10GB Bandwidth</small> -->
+        <small class="d-block" style="font-weight: 600">24/7 Support</small>
+      </div>
+
+      <div class="text-center">
+        <a
+          (click)="options = 'crypto2'; pucg = 1"
+          class="btn text-white px-5 py-3"
+          style="background-color: #2c724f; border-radius: 30px"
+          >Get Started</a
+        >
+      </div>
+    </div>
+
+    <div
+      class="my-5 py-4 px-5 bg-light d-sm-flex align-items-center justify-content-between"
+    >
+      <div class="text-center">
+        <span style="font-weight: 600">Crypto Vip II</span>
+        <h4 class="my-2 font-weight-bold">$10,000.00 - Unlimited</h4>
+        <small class="text-uppercase text-secondary">7 days</small>
+      </div>
+      <div class="text-center text-uppercase text-secondary mb-2">
+        <small class="d-block my-3" style="font-weight: 600"
+          >30% after 7 days</small
+        >
+        <!--       <small class="d-block my-3" style="font-weight: 600;">10GB Bandwidth</small> -->
+        <small class="d-block" style="font-weight: 600">24/7 Support</small>
+      </div>
+
+      <div class="text-center">
+        <a
+          (click)="options = 'crypto3'; pucg = 1"
+          class="btn text-white px-5 py-3"
+          style="background-color: #2c724f; border-radius: 30px"
+          >Get Started</a
+        >
+      </div>
+    </div>
+
+    <div
+      class="my-5 py-4 px-5 bg-light d-sm-flex align-items-center justify-content-between"
+    >
+      <div class="text-center">
+        <span style="font-weight: 600">Real Estate</span>
+        <h4 class="my-2 font-weight-bold">$10,000.00 - Unlimited</h4>
+        <small class="text-uppercase text-secondary">7 days</small>
+      </div>
+      <div class="text-center text-uppercase text-secondary mb-2">
+        <small class="d-block my-3" style="font-weight: 600"
+          >30% after 7 days</small
+        >
+        <!--  <small class="d-block my-3" style="font-weight: 600;">10GB Bandwidth</small> -->
+        <small class="d-block" style="font-weight: 600">24/7 Support</small>
+      </div>
+
+      <div class="text-center">
+        <a
+          (click)="options = 'estate'; pucg = 1"
+          class="btn text-white px-5 py-3"
+          style="background-color: #2c724f; border-radius: 30px"
+          >Get Started</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="pucg == 1">
+  <div class="" *ngIf="bank == '0'">
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <div class="buy-sell-widget">
+            <ul class="nav nav-tabs">
+              <li class="nav-item w-100">
+                <a
+                  class="nav-link active"
+                  data-toggle="tab"
+                  href="#buy"
+                  style="background-color: #013268 !important"
+                  >Deposit Invest</a
+                >
+              </li>
+            </ul>
+
+            <form
+              (ngSubmit)="calculate(so)"
+              #so="ngForm"
+              *ngIf="bank == '0'"
+              class="currency_validate"
+              novalidate="novalidate"
+            >
+              <div class="form-group" *ngIf="money == 1">
+                <label class="mr-sm-2">Currency</label>
+
+                <div class="row">
+                  <!-- <div class="col-md-3 col-6" *ngIf="country == 'India'">
+                    <input class="checkbox-tools" type="radio" name="spend" ngModel required id="tool-0" value="Bank" />
+                    <label class="for-checkbox-tools" for="tool-0">
+                      <div class="serv_icon">
+                        <img src="https://cdn.iconscout.com/icon/free/png-256/bank-transfer-1817143-1538011.png"
+                          style="width: 100%; height: 100%" alt="" />
+                      </div>
+                      <div class="service-content">
+                        <h6 class="d-blue bold">BANK</h6>
+                      </div>
+                    </label>
+                  </div> -->
+
+                  <div class="col-md-3 col-6">
+                    <input
+                      class="checkbox-tools"
+                      type="radio"
+                      ngModel
+                      required
+                      name="spend"
+                      id="tool-1"
+                      value="BTC"
+                    />
+                    <label class="for-checkbox-tools" for="tool-1">
+                      <div class="serv_icon">
+                        <img
+                          src="https://fundbazeonline.com/assets/icon/btc.svg"
+                          style="width: 100%; height: 100%"
+                          alt=""
+                        />
+                      </div>
+                      <div class="service-content">
+                        <h6 class="d-blue bold">BITCOIN</h6>
+                      </div>
+                    </label>
+                  </div>
+
+                  <div class="col-md-3 col-6">
+                    <input
+                      class="checkbox-tools"
+                      type="radio"
+                      ngModel
+                      required
+                      name="spend"
+                      id="tool-30"
+                      value="ETH"
+                    />
+                    <label class="for-checkbox-tools" for="tool-30">
+                      <div class="serv_icon">
+                        <img
+                          src="https://fundbazeonline.com/assets/icon/eth.svg"
+                          style="width: 100%; height: 100%"
+                          alt=""
+                        />
+                      </div>
+                      <div class="service-content">
+                        <h6 class="d-blue bold">Ethereum</h6>
+                      </div>
+                    </label>
+                  </div>
+
+                  <div class="col-md-3 col-6">
+                    <input
+                      class="checkbox-tools"
+                      type="radio"
+                      name="spend"
+                      value="BNB"
+                      id="tool-3"
+                      ngModel
+                      required
+                    />
+                    <label class="for-checkbox-tools" for="tool-3">
+                      <div class="serv_icon">
+                        <img
+                          src="https://fundbazeonline.com/assets/icon/bnb.svg"
+                          style="width: 100%; height: 100%"
+                          alt=""
+                        />
+                      </div>
+                      <div class="service-content">
+                        <h6 class="d-blue bold" style="font-size: 11px">
+                          Binance Coin (ERC20)
+                        </h6>
+                      </div>
+                    </label>
+                  </div>
+
+                  <div class="col-md-3 col-6">
+                    <input
+                      class="checkbox-tools"
+                      type="radio"
+                      name="spend"
+                      value="USDT(ERC20)"
+                      id="tool-4"
+                      ngModel
+                      required
+                    />
+                    <label class="for-checkbox-tools" for="tool-4">
+                      <div class="serv_icon">
+                        <img
+                          src="https://icons.iconarchive.com/icons/cjdowner/cryptocurrency-flat/256/Tether-USDT-icon.png"
+                          style="width: 100%; height: 100%"
+                          alt=""
+                        />
+                      </div>
+                      <div class="service-content">
+                        <h6 class="d-blue bold" style="font-size: 11px">
+                          USDT(ERC20)
+                        </h6>
+                      </div>
+                    </label>
+                  </div>
+
+                  <div class="col-md-3 col-6">
+                    <input
+                      class="checkbox-tools"
+                      type="radio"
+                      name="spend"
+                      ngModel
+                      required
+                      id="tool-7"
+                      value="Account"
+                    />
+                    <label class="for-checkbox-tools" for="tool-7">
+                      <div class="serv_icon">
+                        <img
+                          src="https://img.freepik.com/free-vector/brown-leather-wallet-with-lots-money_68708-304.jpg?size=626&ext=jpg"
+                          style="width: 100%; height: 100%"
+                          alt=""
+                        />
+                      </div>
+                      <div class="service-content">
+                        <h6 class="d-blue bold" style="font-size: 11px">
+                          Balance
+                        </h6>
+                      </div>
+                    </label>
+                  </div>
+
+                  <!--  <div class="col-md-2 col-6">
+                    <input class="checkbox-tools" type="radio" name="spend" value="USDT(TRC20)" id="tool-5" ngModel
+                      required />
+                    <label class="for-checkbox-tools" for="tool-5">
+                      <div class="serv_icon">
+                        <img
+                          src="https://icons.iconarchive.com/icons/cjdowner/cryptocurrency-flat/256/Tether-USDT-icon.png"
+                          style="width: 100%; height: 100%" alt="" />
+                      </div>
+                      <div class="service-content">
+                        <h6 class="d-blue bold" style="font-size: 11px;">USDT(TRC20)</h6>
+                      </div>
+                    </label>
+                  </div> -->
+
+                  <button
+                    type="submit"
+                    class="btn btn-primary btn-round btn-block"
+                    [disabled]="!so.valid"
+                  >
+                    Proceed
+                  </button>
+                </div>
+              </div>
+
+              <div
+                class="form-group"
+                [ngClass]="money >= 1 ? 'd-none' : 'd-block'"
+              >
+                <label class="mr-sm-2">Enter your amount</label>
+                <div class="input-group">
+                  <input
+                    type="number"
+                    ngModel
+                    name="deposit"
+                    required
+                    (change)="atLeastOneRadio()"
+                    [(ngModel)]="int"
+                    class="form-control form-control-amount form-control-lg blue-light-background"
+                    id="custom-amount"
+                    value="0"
+                    placeholder="15.00"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div
+                  class="d-flex justify-content-between mt-3"
+                  *ngIf="display == 1"
+                >
+                  <p class="mb-0">Invest: {{ ammethod | currency }}</p>
+                  <h6 class="mb-0">Earn: {{ profit | currency }}</h6>
+                </div>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12" *ngIf="money == 0">
+                <button
+                  type="button"
+                  class="btn btn-success btn-round btn-block"
+                  *ngIf="display == 0"
+                  (click)="money = 1"
+                  [disabled]="!chek()"
+                >
+                  Pay Now
+                </button>
+              </div>
+              <button
+                type="button"
+                name="submit"
+                class="btn btn-success btn-block"
+                *ngIf="display == 1"
+                (click)="Deposit()"
+              >
+                Invest Now
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="bank == '2'">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12">
+          <div class="row justify-content-center">
+            <div class="col-md-12 mb-3">
+              <div class="card shadow-lg">
+                <div class="rounded-bottom card-body text-white">
+                  <p class="opacity-75 text-center">
+                    Pay ${{ amountTopay }} Send {{ tic }}to address
+                  </p>
+                  <input
+                    type="text"
+                    id="address"
+                    class="form-control form-control-lg mt-2 mb-2"
+                    [value]="addressTopay"
+                    id="refUrl"
+                    readonly=""
+                  />
+                  <button
+                    class="btn btn-primary btn-block btn-lg my-link-copy mb-2"
+                    data-clipboard-target="#my-link-m"
+                    (click)="copy()"
+                  >
+                    COPY
+                  </button>
+                  <div class="rounded p-3 bg-white-translucent">
+                    <p class="font-size-sm mb-0" style="color: black">
+                      <span class="text-primary">ATTENTION</span> - Please send
+                      {{ amountTopay }} dollar worth of {{ tic }}
+                      with gas fee depending on your personal wallet.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="bank == '1' && country == 'India'">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12">
+          <div *ngFor="let item of banks">
+            <div class="row justify-content-center">
+              <div class="col-md-12 mb-3">
+                <div class="card shadow-lg">
+                  <div class="rounded-bottom card-body text-white">
+                    <label for="">Bank name</label>
+                    <input
+                      type="text"
+                      id="address"
+                      class="form-control form-control-lg mt-2 mb-2"
+                      [value]="item.Bank"
+                      readonly=""
+                    />
+                    <label for="">Account number</label>
+                    <input
+                      type="text"
+                      id="address"
+                      class="form-control form-control-lg mt-2 mb-2"
+                      [value]="item.Account"
+                      readonly=""
+                    />
+                    <label for="">Account name</label>
+                    <input
+                      type="text"
+                      id="address"
+                      class="form-control form-control-lg mt-2 mb-2"
+                      [value]="item.Accountname"
+                      readonly=""
+                    />
+                    <label for="">IFSC CODE</label>
+                    <input
+                      type="text"
+                      id="address"
+                      class="form-control form-control-lg mt-2 mb-2"
+                      [value]="item.branch"
+                      readonly=""
+                    />
+                    <label for="">Amount</label>
+                    <input
+                      type="text"
+                      id="address"
+                      class="form-control form-control-lg mt-2 mb-2"
+                      [value]="amm"
+                      readonly=""
+                    />
+
+                    <div class="rounded p-3 bg-white-translucent">
+                      <!--    <p class="font-size-sm mb-0" style="background-color: black;">
+                        <span class="text-primary">ATTENTION</span> -After Payment, contact the adminstrator with your
+                        proof
+                        of payment or<b><a style="text-decoration: underline;"
+                            href="javascript:void(Tawk_API.toggle())">Live
+                            Chat</a></b> for
+                        quick response
+                      </p> -->
+
+                      <p style="background-color: black">
+                        * For easy confirmation make payments with this
+                        paymentID
+                        <b
+                          ><em style="color: white">{{ rand }}</em></b
+                        >
+                        on your bank teller
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

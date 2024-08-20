@@ -1,0 +1,54 @@
+<div class="content">
+  <div class="col-md-12 col-lg-12 col-12">
+
+    <div class="box table-responsive shadow">
+      <div class="box-header">
+        <div class="row">
+          <h3>All Deposit</h3>
+          <h6 style="display: inline-block;">Click each user to view</h6>
+        </div>
+      </div>
+      <table #dataTable class="display table-striped table-hover">
+        <thead>
+          <tr>
+            <th>sn</th>
+            <th>Email</th>
+            <th>Date</th>
+            <th>Entered amount</th>
+            <th>Paid</th>
+            <th>Pay_mode</th>
+            <th>Status</th>
+            <th>id</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let deposits of deposit" [id]="deposits.deposite_id">
+            <td (click)="select(deposits)">{{deposits.sn}}</td>
+            <td (click)="select(deposits)">{{deposits.email}}</td>
+            <td (click)="select(deposits)">{{deposits.depositDate}}</td>
+            <td (click)="select(deposits)">${{deposits.amount}}</td>
+            <td (click)="select(deposits)">{{deposits.pay_mode}}</td>
+            <td (click)="select(deposits)">{{deposits.expected_roi}}</td>
+            <td (click)="select(deposits)">{{deposits.status}}</td>
+            <td (click)="select(deposits)">{{deposits.deposite_id}}</td>
+            <td><button (click)="deleteDep(deposits.deposite_id)" class="btn btn-danger">Delete</button></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>sn</th>
+            <th>Email</th>
+            <th>Date</th>
+            <th>Entered amount</th>
+            <th>Paid</th>
+            <th>Pay_mode</th>
+            <th>Status</th>
+            <th>id</th>
+            <th>Delete</th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+  </div>

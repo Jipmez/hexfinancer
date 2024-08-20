@@ -1,0 +1,292 @@
+<div class="container-fluid">
+  <div class="header">
+    <h1 class="header-title">Welcome back,&nbsp;{{ username }}!</h1>
+    <p class="header-subtitle">
+      We look forward to growing your portfolio with you today.
+    </p>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 col-lg-3 col-xl">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col mt-0">
+              <h5 class="card-title">Account Balance</h5>
+            </div>
+
+            <div class="col-auto">
+              <div class="avatar">
+                <div class="avatar-title rounded-circle bg-primary-dark">
+                  <i class="fa fa-bar-chart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h1 class="display-5 mt-1 mb-3">
+            <span *ngIf="acc > '1'" id="ContentPlaceHolder1_Balance">
+              {{ acc | currency }}
+            </span>
+            <span *ngIf="acc < '1'" id="ContentPlaceHolder1_Balance">
+              $0.00
+            </span>
+          </h1>
+          <div class="mb-0" style="display: none">Total Sum</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-3 col-xl">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col mt-0">
+              <h5 class="card-title">Total Earned</h5>
+            </div>
+
+            <div class="col-auto">
+              <div class="avatar">
+                <div class="avatar-title rounded-circle bg-primary-dark">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-dollar-sign align-middle"
+                  >
+                    <line x1="12" y1="1" x2="12" y2="23"></line>
+                    <path
+                      d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h1 class="display-5 mt-1 mb-3">
+            <span id="ContentPlaceHolder1_Earning">${{ totprof }}</span>
+          </h1>
+          <div class="mb-0" style="display: none">Total Sum</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-3 col-xl">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col mt-0">
+              <h5 class="card-title">Total Profit</h5>
+            </div>
+
+            <div class="col-auto">
+              <div class="avatar">
+                <div class="avatar-title rounded-circle bg-primary-dark">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-activity align-middle"
+                  >
+                    <polyline
+                      points="22 12 18 12 15 21 9 3 6 12 2 12"
+                    ></polyline>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h1 class="display-5 mt-1 mb-3">
+            <span id="ContentPlaceHolder1_P_Today">${{ monthpro }}</span>
+          </h1>
+          <div class="mb-0" style="display: none">Total Sum</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-3 col-xl">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col mt-0">
+              <h5 class="card-title">Withdrawals</h5>
+            </div>
+
+            <div class="col-auto">
+              <div class="avatar">
+                <div class="avatar-title rounded-circle bg-primary-dark">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-activity align-middle"
+                  >
+                    <polyline
+                      points="22 12 18 12 15 21 9 3 6 12 2 12"
+                    ></polyline>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h1 class="display-5 mt-1 mb-3">
+            <span id="ContentPlaceHolder1_W_Count">${{ totwith }}</span>
+          </h1>
+          <div class="mb-0" style="display: none">Total Count</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 col-lg-3 col-xl">
+      <div class="card flex-fill w-100">
+        <div class="card-header">
+          <h5 class="card-title mb-0">Deposit Report</h5>
+        </div>
+        <div class="card-body d-flex">
+          <div class="align-self-center w-100">
+            <table class="table table-borderless mb-0 c_CDL">
+              <tbody>
+                <tr>
+                  <td>
+                    Total Deposited<span id="ContentPlaceHolder1_Total_Depo"
+                      >${{ totdep }}</span
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Active Deposit<span id="ContentPlaceHolder1_Active_Depo">{{
+                      plan.length
+                    }}</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Last Deposit<span id="ContentPlaceHolder1_lDeposit"
+                      >${{ lastdep }}</span
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <a
+              routerLink="deposit"
+              style="
+                display: block !important;
+                width: 120pt;
+                margin: 11pt auto 0 auto !important;
+              "
+              class="btn btn-primary me-2 btCDL"
+              >Deposit Now</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-3 col-xl">
+      <div class="card flex-fill w-100">
+        <div class="card-header">
+          <h5 class="card-title mb-0">Withdrawal Report</h5>
+        </div>
+        <div class="card-body d-flex">
+          <div class="align-self-center w-100">
+            <table class="table table-borderless mb-0 c_CDL">
+              <tbody>
+                <tr>
+                  <td>
+                    Total Withdrawal<span
+                      id="ContentPlaceHolder1_Total_withdraw"
+                      >${{ totwith }}</span
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Pending Withdrawal<span id="ContentPlaceHolder1_pWithdrawal"
+                      >${{ pwith }}</span
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Last Withdrawal<span id="ContentPlaceHolder1_lWithdrawal"
+                      >${{ lastwith }}</span
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <a
+              routerLink="withdrawal"
+              style="
+                display: block !important;
+                width: 120pt;
+                margin: 11pt auto 0 auto !important;
+              "
+              class="btn btn-primary me-2 btCDL"
+              >Withdraw Now</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xl-12 col-lg-12">
+      <div class="card widget-flat text-white mb-0">
+        <div
+          class="card-body"
+          style="background: #2c724f !important; color: white !important"
+        >
+          <h5 class="font-weight-normal text-white mt-0" title="Revenue">
+            Active Earnings
+          </h5>
+          <ul class="list-unstyled">
+            <li class="d-flex" *ngFor="let deps of plan">
+              <i class="fa fa-btc me-3"></i>
+              <div class="flex-grow-1">
+                <h5 class="mt-3 text-white">
+                  ${{ deps.amount }} {{ deps.plan }}
+                </h5>
+              </div>
+              <div class="text-right text-white">
+                <h5>{{ deps.current_amount }} USD</h5>
+                <div class="progress">
+                  <div
+                    class="progress-bar"
+                    style="background-color: #e73c3e !important"
+                    role="progressbar"
+                    [style.width]="deps.per + '%'"
+                    [aria-valuenow]="deps.per + '%'"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+                <p class="text-success">
+                  {{ deps.per }}% <span><i class="las la-arrow-up"></i></span>
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

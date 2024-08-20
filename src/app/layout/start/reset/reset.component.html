@@ -1,0 +1,70 @@
+<ng-progress [color]="'#4659E2'" [speed]="200" [thick]="true" [speed]="500" [trickleSpeed]="250"></ng-progress>
+
+<div class="show">
+
+  <div class="authincation section-padding">
+    <div class="container h-100">
+      <div class="row justify-content-center h-100 align-items-center">
+        <div class="col-xl-5 col-md-6">
+          <div class="mini-logo text-center my-5">
+            <a routerLink="/"><img src="../../../../assets/images/logo.png" alt=""></a>
+          </div>
+          <div class="auth-form card">
+            <div class="card-header justify-content-center">
+              <h4 class="card-title">Change password</h4>
+
+            </div>
+            <div class="card-body">
+              <form (ngSubmit)="ChangePass(ad)" #ad="ngForm" id="form" *ngIf="this.visible == '1'">
+
+                <div id="middle">
+                  <h1 id="top" class="forgot-password-header">Reset your password</h1>
+                  <p class="message">
+
+                    Use the form below to change your password
+
+                  </p>
+
+
+                  <div class="form-group">
+                    <label for="id_email">Password:</label>
+
+                    <input type="password" name="Password" ngModel autofocus="true"
+                      (change)="analyze($event.target.value)" required class="reqblue" class="form-control"
+                      id="id_pass">
+                  </div>
+
+
+
+
+
+                  <div class="form-group">
+                    <label for="id_email">Confirm Password:</label>
+
+                    <input type="password" name="CPassword" ngModel autofocus="true" required
+                      class="reqblue form-control" id="id_cpass">
+                  </div>
+
+
+                </div>
+                <div id="bottom">
+                  <button type="submit" class="btn d-table m-auto pl-5 pr-5 btn_st text-uppercase" type="submit"
+                    [disabled]='!ad.valid'> Change</button>
+
+                </div>
+              </form>
+
+              <div id="notify" class="alert alert-warning" *ngIf="this.visible == '2'">
+                <strong>Error!</strong> Either the provided token does not match that on file or your time has
+                expired. Please
+                resubmit the <a routerLink="/forgot_pass" class="alert-link" style="color: black;">“Forgot your
+                  password?”</a>form.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
