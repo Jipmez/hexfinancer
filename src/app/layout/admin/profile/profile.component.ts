@@ -196,6 +196,20 @@ export class ProfileComponent implements OnInit {
     x.reset();
   }
 
+
+  Simulate(x: NgForm) {
+    let simulate = {
+      amount: x.value.amount,
+      type: x.value.type,
+      Id: this.id,
+      key: "simulate",
+    }
+
+    this.server.Api(simulate).subscribe((res) => {
+      this.toastr.infoToastr(res["message"]);
+    });
+  }
+
   Ramb() {
     let ramb = {
       email: this.email,

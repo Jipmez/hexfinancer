@@ -8,7 +8,6 @@ import {
 } from "@angular/core";
 import { DOCUMENT } from "@angular/common";
 import { CookieService } from "ngx-cookie-service";
-import { NgForm } from "@angular/forms";
 import { ToastrManager } from "ng6-toastr-notifications";
 import { DataService } from "../../../data.service";
 import { Router, NavigationEnd, ActivatedRoute } from "@angular/router";

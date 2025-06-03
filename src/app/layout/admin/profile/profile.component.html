@@ -131,12 +131,39 @@
                 </div>
               </div>
             </div>
+
+             <form id="formValidate" (ngSubmit)="Simulate(po)" #po="ngForm">
+              <fieldset class="form-group">
+                <legend><span>Simulate Transaction</span></legend>
+                <div class="row">
+
+                  <div class="col-sm-12">
+                    <div class="form-group"><label for="">Amount</label><input class="form-control" ngModel
+                        name="amount"  placeholder="Amount"
+                        required="required">
+                      <div class="help-block form-text with-errors form-control-feedback"></div>
+                    </div>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="form-group"><label for="">Type</label>
+                        <select name="type" id="" ngModel class="form-control">
+                          <option value="deposit" selected="">Deposit</option>
+                          <option value="withdrawal">Withdrawal</option>
+                        </select>
+                      <div class="help-block form-text with-errors form-control-feedback"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-buttons-w"><button class="btn btn-primary disabled" type="submit"> Submit</button>
+                </div>
+              </fieldset>
+            </form>
             <form id="formValidate" (ngSubmit)="person(so)" #so="ngForm">
               <fieldset class="form-group">
                 <legend><span>Personal update</span></legend>
                 <div class="row">
                   <div class="col-sm-6">
-                    <div class="form-group"><label for="">fullnmae</label><input class="form-control" ngModel
+                    <div class="form-group"><label for="">fullname</label><input class="form-control" ngModel
                         name="fullname" data-error="Please input your First Name" placeholder="First Name"
                         required="required">
                       <div class="help-block form-text with-errors form-control-feedback"></div>
@@ -191,6 +218,8 @@
                 </div>
               </fieldset>
             </form>
+
+
           </div>
         </div>
         <div class="element-wrapper">
