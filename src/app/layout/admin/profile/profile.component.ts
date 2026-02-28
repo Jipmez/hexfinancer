@@ -178,6 +178,7 @@ export class ProfileComponent implements OnInit {
   }
 
   account(x: NgForm) {
+    console.log(x.value);
     let person = {
       bitad: x.value.bitad == "" ? this.bitad : x.value.bitad,
       account: x.value.account,
